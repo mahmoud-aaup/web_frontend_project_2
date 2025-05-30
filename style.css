@@ -6,7 +6,7 @@ body {
     padding: 20px;
     text-align: center;
 }
-
+ 
   .container {
     max-width: 600px;
     margin: auto;
@@ -72,5 +72,10 @@ body {
   li.done {
     text-decoration: line-through;
     background: #d3ffd3;
+  }
+
+  li button:nth-of-type(2){
+    color: red;
+    padding: 0.12em 0.5em;
   }
 
