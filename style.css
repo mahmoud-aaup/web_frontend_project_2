@@ -42,3 +42,12 @@ body {
     border-radius: 5px;
   }
 
+    /* ----------------- actions button  design  */
+    .actions button {
+        margin: 10px 5px;
+        padding: 10px;
+        border: none;
+        background: #0097b2;
+        color: white;
+        border-radius: 5px;
+      }
