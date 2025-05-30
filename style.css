@@ -13,6 +13,7 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 1px 2px 10px rgb(192, 71, 71) , 1px 2px 10px rgb(86, 54, 230);
   }
 
   /* ----------------- .user_input input  design  */
