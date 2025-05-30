@@ -29,6 +29,7 @@ body {
     color: #fff;
     border: none;
     margin-left: 10px;
+    cursor: pointer;
   }
 
 
@@ -40,6 +41,7 @@ body {
     background: #0097b2;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
   }
 
   .actions button {
