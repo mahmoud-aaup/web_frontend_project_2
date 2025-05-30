@@ -10,12 +10,18 @@
     <main class="container">
 
     <!-- ------------------------------------------- Part 1 -->
-    <h1>To do Add New</h1>
-    <div class="user_input">
-      <input type="text" id="new-task" placeholder="New Todo">
-      <button onclick="addTask()">Add new task</button>
-    </div>
+    <h1>ToDoInput</h1>
 
+    <form class="user_input" onsubmit="addTask(); return false;">
+      <input 
+        type="text" 
+        id="new-task" 
+        name="task" 
+        autocomplete="on" 
+        placeholder="New Todo"
+      >
+      <button type="submit">Add new task</button>
+    </form>
 
     <!-- ------------------------------------------- Part 2 -->
     <h2>Todo List</h2>
