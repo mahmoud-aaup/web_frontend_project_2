@@ -30,3 +30,15 @@ body {
     border: none;
     margin-left: 10px;
   }
+
+
+  /* ----------------- taps button  design  */
+  .taps button {
+    margin: 10px 5px;
+    padding: 10px;
+    border: none;
+    background: #0097b2;
+    color: white;
+    border-radius: 5px;
+  }
+
