@@ -42,3 +42,7 @@ body {
     border-radius: 5px;
   }
 
+  .actions button {
+    background: #e74c3c;
+  }
+
