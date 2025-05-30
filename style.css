@@ -46,3 +46,11 @@ body {
     background: #e74c3c;
   }
 
+
+  /* ----------------- ul list design  */
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
