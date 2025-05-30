@@ -54,3 +54,12 @@ body {
     padding: 0;
   }
 
+
+  /* ----------------- li element design  */
+
+  li {
+    background: #eee;
+    margin: 8px 0;
+    padding: 10px;
+  }
+
