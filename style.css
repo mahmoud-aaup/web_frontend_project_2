@@ -66,3 +66,9 @@ body {
     align-items: center;
   }
 
+
+  li.done {
+    text-decoration: line-through;
+    background: #d3ffd3;
+  }
+
