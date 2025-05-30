@@ -15,4 +15,9 @@ body {
     border-radius: 8px;
   }
 
-  /* ----------------- other  design  */
+  /* ----------------- .user_input input  design  */
+
+  .user_input input {
+    padding: 10px;
+    width: 70%;
+  }
