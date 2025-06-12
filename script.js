@@ -9,3 +9,12 @@ let currentFilter = "all";
 const saveTasks = () => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
+
+const renderTasks = () => {
+  taskList.innerHTML = "";
+
+  const filteredTasks = tasks.filter(task => {
+    if (currentFilter === "done") return task.done;
+    if (currentFilter === "todo") return !task.done;
+    return true;
+  });
