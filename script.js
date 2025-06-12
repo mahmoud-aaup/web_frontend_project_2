@@ -18,3 +18,9 @@ const renderTasks = () => {
     if (currentFilter === "todo") return !task.done;
     return true;
   });
+
+  filteredTasks.forEach((task, index) => {
+    const li = document.createElement("li");
+    li.className = "task-item";
+    if (task.done) li.classList.add("done");
+
