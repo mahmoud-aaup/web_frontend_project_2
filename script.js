@@ -113,3 +113,8 @@ const filterTasks = filter => {
   currentFilter = filter;
   renderTasks();
 };
+// ------------ Event Listeners ------------
+taskForm.addEventListener("submit", e => {
+  e.preventDefault();
+  addTask();
+});
