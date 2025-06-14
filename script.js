@@ -83,3 +83,15 @@ const deleteTask = index => {
   saveTasks();
   renderTasks();
 };
+// ------------ Delete All Tasks ------------
+const deleteAllTasks = () => {
+  if (tasks.length === 0) {
+    alert("No tasks to delete.");
+    return;
+  }
+  if (confirm("Are you sure you want to delete all tasks?")) {
+    tasks = [];
+    saveTasks();
+    renderTasks();
+  }
+};
