@@ -24,3 +24,9 @@ const renderTasks = () => {
     li.className = "task-item";
     if (task.done) li.classList.add("done");
 
+  li.innerHTML = `
+      <input type="checkbox" ${task.done ? "checked" : ""} onchange="toggleDone(${index})">
+      <span>${task.text}</span>
+      <button onclick="editTask(${index})">✏️</button>
+      <button onclick="deleteTask(${index})">🗑️</button>
+    `;
