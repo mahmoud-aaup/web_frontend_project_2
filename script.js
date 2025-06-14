@@ -131,7 +131,6 @@ const showPopup = (message, onConfirm = null) => {
     popup.style.display = "none";
   };
 
-  // If it's just an info message, hide cancel button
   popupCancel.style.display = onConfirm ? "inline-block" : "none";
 };
 
