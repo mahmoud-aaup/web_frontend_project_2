@@ -95,3 +95,15 @@ const deleteAllTasks = () => {
     renderTasks();
   }
 };
+// ------------ Delete Done Tasks ------------
+const deleteDoneTasks = () => {
+  if (tasks.every(task => !task.done)) {
+    alert("No done tasks to delete.");
+    return;
+  }
+  if (confirm("Delete all done tasks?")) {
+    tasks = tasks.filter(task => !task.done);
+    saveTasks();
+    renderTasks();
+  }
+};
