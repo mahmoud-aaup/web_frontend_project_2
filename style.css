@@ -73,3 +73,34 @@ li button:nth-of-type(2){
     color: red;
     padding: 0.12em 0.5em;
 }
+/* ----------------- Popup Styles ----------------- */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.popup-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#popup-confirm { background-color: #0097b2; color: white; }
+#popup-cancel { background-color: #e74c3c; color: white; }
