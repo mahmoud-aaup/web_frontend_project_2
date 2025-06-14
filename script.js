@@ -1,6 +1,7 @@
-// ------------ Constants and Selectors ------------
 const taskInput = document.getElementById("new-task");
 const taskList = document.getElementById("task-list");
+const errorMessage = document.getElementById("error-message");
+const taskForm = document.getElementById("task-form");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let currentFilter = "all";
@@ -21,12 +22,4 @@ const renderTasks = () => {
 
   filteredTasks.forEach((task, index) => {
     const li = document.createElement("li");
-    li.className = "task-item";
     if (task.done) li.classList.add("done");
-
-  li.innerHTML = `
-      <input type="checkbox" ${task.done ? "checked" : ""} onchange="toggleDone(${index})">
-      <span>${task.text}</span>
-      <button onclick="editTask(${index})">✏️</button>
-      <button onclick="deleteTask(${index})">🗑️</button>
-    `;
