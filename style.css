@@ -7,35 +7,34 @@ body {
     text-align: center;
 }
 
-  .container {
+.container {
     max-width: 600px;
     margin: auto;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 1px 2px 10px rgb(192, 71, 71) , 1px 2px 10px rgb(86, 54, 230);
-  }
+}
 
-  /* ----------------- .user_input input  design  */
+/* ----------------- .user_input input  design  */
 
-  .user_input input {
+.user_input input {
     padding: 10px;
     width: 70%;
-  }
+}
 
-  /* ----------------- .user_input input  design  */
-  .user_input button {
+/* ----------------- .user_input button  design  */
+.user_input button {
     padding: 10px;
     background: #0097b2;
     color: #fff;
     border: none;
     margin-left: 10px;
     cursor: pointer;
-  }
+}
 
-
-  /* ----------------- taps + actions buttons  design  */
-  .taps button,  .actions button{
+/* ----------------- taps + actions buttons  design  */
+.taps button,  .actions button{
     margin: 10px 5px;
     padding: 10px;
     border: none;
@@ -43,39 +42,34 @@ body {
     color: white;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
 
-  .actions button {
+.actions button {
     background: #e74c3c;
-  }
+}
 
-
-  /* ----------------- ul list design  */
-
-  ul {
+/* ----------------- ul list design  */
+ul {
     list-style: none;
     padding: 0;
-  }
+}
 
-
-  /* ----------------- li element design  */
-
-  li {
+/* ----------------- li element design  */
+li {
     background: #eee;
     margin: 8px 0;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-
-  li.done {
+li.done {
     text-decoration: line-through;
     background: #d3ffd3;
-  }
+}
 
-  li button:nth-of-type(2){
+li button:nth-of-type(2){
     color: red;
     padding: 0.12em 0.5em;
-  }
+}
