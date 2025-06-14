@@ -107,3 +107,9 @@ const deleteDoneTasks = () => {
     renderTasks();
   }
 };
+
+// ------------ Filter Tasks ------------
+const filterTasks = filter => {
+  currentFilter = filter;
+  renderTasks();
+};
