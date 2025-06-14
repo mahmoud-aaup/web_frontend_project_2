@@ -6,19 +6,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body> 
-    <main class="container">
+  <main class="container">
 
     <!-- ------------------------------------------- Part 1 -->
     <h1>ToDoInput</h1>
 
     <form class="user_input" id="task-form">
-      <input 
-        type="text" 
-        id="new-task" 
-        name="task" 
-        autocomplete="on" 
-        placeholder="New Todo"
-      >
+      <input type="text" id="new-task" name="task" autocomplete="on" placeholder="New Todo">
       <button type="submit">Add new task</button>
       <p id="error-message" style="color: red;"></p>
     </form>
@@ -36,11 +30,23 @@
 
     <!-- ------------------------------------------- Part 4 -->
     <div class="actions">
-        <button onclick="deleteDoneTasks()">Delete Done Tasks</button>
-        <button onclick="deleteAllTasks()">Delete All Tasks</button>
+      <button onclick="deleteDoneTasks()">Delete Done Tasks</button>
+      <button onclick="deleteAllTasks()">Delete All Tasks</button>
     </div>
 
-    </main>
-    <script src="script.js"></script>
+  </main>
+
+  <!-- ------------------------------------------- Custom Popup -->
+  <div id="custom-popup" class="popup">
+    <div class="popup-content">
+      <p id="popup-message"></p>
+      <div class="popup-buttons">
+        <button id="popup-confirm">Confirm</button>
+        <button id="popup-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
