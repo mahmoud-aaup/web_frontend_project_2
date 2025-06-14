@@ -59,3 +59,15 @@ const showError = message => {
 const clearError = () => {
   errorMessage.textContent = "";
 };
+
+// ------------ Add Task ------------
+const addTask = () => {
+  const taskName = taskInput.value.trim();
+  if (!isValidTask(taskName)) return;
+
+  tasks.push({ name: taskName, done: false });
+  saveTasks();
+  renderTasks();
+  taskInput.value = "";
+  clearError();
+};
