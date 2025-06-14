@@ -77,3 +77,9 @@ const toggleTask = index => {
   saveTasks();
   renderTasks();
 };
+// ------------ Delete Task ------------
+const deleteTask = index => {
+  tasks.splice(index, 1);
+  saveTasks();
+  renderTasks();
+};
