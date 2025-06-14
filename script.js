@@ -1,7 +1,13 @@
+// ------------ Constants and Selectors ------------
 const taskInput = document.getElementById("new-task");
 const taskList = document.getElementById("task-list");
 const errorMessage = document.getElementById("error-message");
 const taskForm = document.getElementById("task-form");
+
+const popup = document.getElementById("custom-popup");
+const popupMessage = document.getElementById("popup-message");
+const popupConfirm = document.getElementById("popup-confirm");
+const popupCancel = document.getElementById("popup-cancel");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let currentFilter = "all";
@@ -24,7 +30,6 @@ const renderTasks = () => {
     const li = document.createElement("li");
     if (task.done) li.classList.add("done");
 
-    
     li.innerHTML = `
       <span>${task.name}</span>
       <div>
@@ -35,25 +40,17 @@ const renderTasks = () => {
     taskList.appendChild(li);
   });
 };
-// ------------ Input Validation ------------
+
 const isValidTask = task => {
-  if (!task) {
-    showError("Task cannot be empty.");
-    return false;
-  }
-  if (!isNaN(task[0])) {
-    showError("Task cannot start with a number.");
-    return false;
-  }
-  if (task.length < 5) {
-    showError("Task must be at least 5 characters.");
-    return false;
-  }
+  if (!task) return showError("Task cannot be empty.");
+  if (!isNaN(task[0])) return showError("Task cannot start with a number.");
+  if (task.length < 5) return showError("Task must be at least 5 characters.");
   return true;
 };
 
 const showError = message => {
   errorMessage.textContent = message;
+  return false;
 };
 
 const clearError = () => {
@@ -71,41 +68,47 @@ const addTask = () => {
   taskInput.value = "";
   clearError();
 };
+
 // ------------ Toggle Task Done ------------
 const toggleTask = index => {
   tasks[index].done = !tasks[index].done;
   saveTasks();
   renderTasks();
 };
+
 // ------------ Delete Task ------------
 const deleteTask = index => {
-  tasks.splice(index, 1);
-  saveTasks();
-  renderTasks();
+  showPopup("Do you want to delete this task?", () => {
+    tasks.splice(index, 1);
+    saveTasks();
+    renderTasks();
+  });
 };
+
 // ------------ Delete All Tasks ------------
 const deleteAllTasks = () => {
   if (tasks.length === 0) {
-    alert("No tasks to delete.");
+    showPopup("No tasks to delete.");
     return;
   }
-  if (confirm("Are you sure you want to delete all tasks?")) {
+  showPopup("Are you sure you want to delete all tasks?", () => {
     tasks = [];
     saveTasks();
     renderTasks();
-  }
+  });
 };
+
 // ------------ Delete Done Tasks ------------
 const deleteDoneTasks = () => {
   if (tasks.every(task => !task.done)) {
-    alert("No done tasks to delete.");
+    showPopup("No done tasks to delete.");
     return;
   }
-  if (confirm("Delete all done tasks?")) {
+  showPopup("Delete all done tasks?", () => {
     tasks = tasks.filter(task => !task.done);
     saveTasks();
     renderTasks();
-  }
+  });
 };
 
 // ------------ Filter Tasks ------------
@@ -113,10 +116,30 @@ const filterTasks = filter => {
   currentFilter = filter;
   renderTasks();
 };
+
+// ------------ Custom Popup Logic ------------
+const showPopup = (message, onConfirm = null) => {
+  popupMessage.textContent = message;
+  popup.style.display = "flex";
+
+  popupConfirm.onclick = () => {
+    popup.style.display = "none";
+    if (onConfirm) onConfirm();
+  };
+
+  popupCancel.onclick = () => {
+    popup.style.display = "none";
+  };
+
+  // If it's just an info message, hide cancel button
+  popupCancel.style.display = onConfirm ? "inline-block" : "none";
+};
+
 // ------------ Event Listeners ------------
 taskForm.addEventListener("submit", e => {
   e.preventDefault();
   addTask();
 });
 
+// ------------ Initial Render ------------
 renderTasks();
