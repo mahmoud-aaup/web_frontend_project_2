@@ -51,3 +51,11 @@ const isValidTask = task => {
   }
   return true;
 };
+
+const showError = message => {
+  errorMessage.textContent = message;
+};
+
+const clearError = () => {
+  errorMessage.textContent = "";
+};
