@@ -35,3 +35,19 @@ const renderTasks = () => {
     taskList.appendChild(li);
   });
 };
+// ------------ Input Validation ------------
+const isValidTask = task => {
+  if (!task) {
+    showError("Task cannot be empty.");
+    return false;
+  }
+  if (!isNaN(task[0])) {
+    showError("Task cannot start with a number.");
+    return false;
+  }
+  if (task.length < 5) {
+    showError("Task must be at least 5 characters.");
+    return false;
+  }
+  return true;
+};
