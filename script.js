@@ -23,3 +23,15 @@ const renderTasks = () => {
   filteredTasks.forEach((task, index) => {
     const li = document.createElement("li");
     if (task.done) li.classList.add("done");
+
+    
+    li.innerHTML = `
+      <span>${task.name}</span>
+      <div>
+        <button onclick="toggleTask(${index})">✔</button>
+        <button onclick="deleteTask(${index})">✖</button>
+      </div>
+    `;
+    taskList.appendChild(li);
+  });
+};
